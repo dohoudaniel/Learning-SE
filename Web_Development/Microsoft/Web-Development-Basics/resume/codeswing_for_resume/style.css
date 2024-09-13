@@ -1,0 +1,46 @@
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+#social-media {
+    color: blue;
+}
+
+h1 {
+    font-size: 1.6rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+a:visited {
+    color: green;
+}
+
+a:link {
+    color: green;
+}
+
+a:hover {
+    color: red;
+    background-color: white;
+}
+
+#first-company {
+    color:darkblue;
+    font-size: larger;
+}
+
+.experience {
+    font-style: italic;
+}
