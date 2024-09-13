@@ -1,0 +1,23 @@
+Prompt
+------
+When compiling a c program using a gcc compiler, what is the importance of adding -c into the compile command?
+
+
+Answer
+When compiling a C program using a GCC compiler, the -c option tells the compiler to generate object files from the source code, 
+without linking them into an executable.
+
+Here's an example of how the gcc command can be used to compile a C program with the -c option:
+
+gcc -c myfile.c
+
+In this example, myfile.c is the source code file. The -c option tells GCC to compile the code and generate an object file named myfile.o. 
+The object file contains compiled machine code, but it's not executable on its own. Instead, it needs to be linked with other object files 
+and libraries to create an executable.
+
+The primary use case for generating object files separately from linking them into an executable is when working with large projects that 
+consist of multiple source files. Compiling each source file separately into an object file allows for incremental compilation, where only 
+the modified source files need to be recompiled. This can save a significant amount of time when working with large projects.
+
+
+-c : Compile and assemble, but do not link.
