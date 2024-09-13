@@ -1,0 +1,26 @@
+These are the links:
+- https://web.dev/new-patterns-for-amazing-apps/
+- https://developer.chrome.com/password-manager-compatible/
+- https://web.dev/learn/accessibility/
+- https://web.dev/spaces/
+- https://youtu.be/qwdN1fJA_d8
+- https://developer.chrome.com/blog/no-spooky-cookies/
+- https://youtu.be/tEOzwbvmTpA
+- https://web.dev/learn/html/
+- https://www.cwwtechafrica.com/
+- https://www.cwwtechafrica.com/cta-application-form/
+- https://www.freecodecamp.org/news/learn-html-and-css-from-the-ceo-of-scrimba/
+- https://twitter.com/Aarzoo75/status/1608503251770699776
+- https://t.co/ngqZEHwMoa
+- https://t.co/ypTmsoI36p
+- https://learn.microsoft.com/en-us/users/jenlooper-2911/collections/jg2gax8pzd6o81?WT.mc_id=academic-77807-sagibbon
+- https://learn.microsoft.com/en-us/shows/beginners-series-to-nodejs/?wt.mc_id=academic-77807-sagibbon
+- https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/?wt.mc_id=academic-77807-sagibbon
+- https://learn.microsoft.com/en-us/training/modules/web-development-101-introduction-programming/
+- https://web.dev/new-patterns-for-amazing-apps/
+- https://web.dev/learn/html/
+- htmlreference.io
+- html.com
+- A Simple Guide To HTML - https://www.simplehtmlguide.com/basics.php
+- w3docs.com
+- freeCodeCamp's Responsive Design Course includes HTML

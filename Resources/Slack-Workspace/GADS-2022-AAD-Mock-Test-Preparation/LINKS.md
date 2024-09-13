@@ -1,0 +1,15 @@
+These are the links:
+- https://goo.gle/3UYdSL1
+- https://github.com/blocoio/android-template
+- https://developers.google.com/certification/associate-android-developer/study-guide
+- https://www.google.com/search?q=official+study+guides+for+AAD&rlz=1C1KNTJ_enNG1026NG1026&oq=official+study+guides+for+AAD&aqs=chrome..69i57j33i160l3j33i22i29i30.10399j0j7&sourceid=chrome&ie=UTF-8
+- https://www.google.com/search?q=official+study+guides+for+Android+Application+Development&rlz=1C1KNTJ_enNG1026NG1026&sxsrf=ALiCzsbJ7DWpT8tFtOZ2DUjRJVXtikm9HQ%3A1669301587399&ei=U4V_Y8n3F_KE9u8P--yzsAw&ved=0ahUKEwiJ7Y6Bicf7AhVygv0HHXv2DMYQ4dUDCA8&uact=5&oq=official+study+guides+for+Android+Application+Development&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCCEQoAEyBQghEKABMggIIRAWEB4QHToKCAAQRxDWBBCwAzoECCEQFToECCEQCjoKCCEQwwQQChCgAToICCEQwwQQoAE6BwghEKABEApKBAhBGABKBAhGGABQsQVY-l9gpmJoAXABeACAAbICiAHGMZIBCDAuMS4yNi4xmAEAoAEByAEIwAEB&sclient=gws-wiz-serp
+- https://www.geeksforgeeks.org/top-10-books-for-android-app-development/
+- https://www.freecodecamp.org/news/tag/android-app-development/
+- https://developers.google.com/certification/associate-android-developer/study-guide/android-core
+- https://developers.google.com/certification/associate-android-developer/study-guide/user-interface
+- https://developers.google.com/certification/associate-android-developer/study-guide/data-management
+- https://developers.google.com/certification/associate-android-developer/study-guide/debugging
+- https://developers.google.com/certification/associate-android-developer/study-guide/testing
+- https://www.freecodecamp.org/news/learn-kotlin-complete-course/
+- 

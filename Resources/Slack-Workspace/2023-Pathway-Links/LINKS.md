@@ -1,0 +1,18 @@
+These are the Links:
+- https://learn.microsoft.com/en-gb/training/student-hub/?WT.mc_id=academic-13441-cxa
+- https://learn.microsoft.com/en-us/training/modules/web-development-101-introduction-programming/
+- https://learn.microsoft.com/en-us/training/paths/beginner-python
+- https://learn.microsoft.com/en-us/training/roles/developer
+- https://learn.microsoft.com/en-us/training/modules/career-get-noticed/
+- https://learn.microsoft.com/en-us/training/modules/career-interview/
+- https://learn.microsoft.com/en-us/training/modules/career-growth/
+- https://learn.microsoft.com/en-gb/training/career-paths/career-connected
+- https://education.github.com/experiences/primer_codespaces
+- https://learn.microsoft.com/en-us/training/student-hub/certifications
+- https://education.github.com/pack
+- https://code.visualstudio.com/
+- https://learn.microsoft.com/en-us/training/paths/beginner-python/
+- https://learn.microsoft.com/en-us/users/jenlooper-2911/collections/jg2gax8pzd6o81?WT.mc_id=academic-77807-sagibbon
+- https://learn.microsoft.com/en-us/shows/beginners-series-to-nodejs/?wt.mc_id=academic-77807-sagibbon
+- https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/?wt.mc_id=academic-77807-sagibbon
+- https://learn.microsoft.com/en-us/training/modules/web-development-101-introduction-programming/

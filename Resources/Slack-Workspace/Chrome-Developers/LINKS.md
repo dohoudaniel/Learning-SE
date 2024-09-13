@@ -1,0 +1,15 @@
+These are the links:
+- https://developer.chrome.com/tags/insider/
+- https://youtu.be/hdRDTj6ObiE
+- https://youtu.be/5gBqTXctxO8
+- https://youtube.com/playlist?list=PLNYkxOF6rcIAaV1wwI9540OC_3XoIzMjQ
+- https://youtu.be/xl9R8aTOW_I
+- https://youtube.com/playlist?list=PLNYkxOF6rcIBzsbjZKyOdO-iwQTjidz1P
+- https://web.dev/new-patterns-for-amazing-apps/
+- https://developer.chrome.com/password-manager-compatible/
+- https://web.dev/learn/accessibility/
+- https://web.dev/spaces/
+- https://youtu.be/qwdN1fJA_d8
+- https://developer.chrome.com/blog/no-spooky-cookies/
+- https://youtu.be/tEOzwbvmTpA
+- https://developer.chrome.com/meet-the-team/

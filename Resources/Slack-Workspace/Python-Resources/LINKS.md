@@ -1,0 +1,11 @@
+These are the links:
+- https://community.openweaver.com/t/basics-of-python-learn-by-doing/1602?landingpage=pythonbasics&utm_campaign=paid_video_dsc&utm_medium=cpc&utm_source=YouTube&utm_term=pythonbasics&utm_content=cert&gclid=Cj0KCQjwhY-aBhCUARIsALNIC046GixnW3hiEaI2ImfeRp15VITQWCoxIu1jEM1JZ-8-DIhTDEmUzKMaAqEREALw_wcB
+- http://wiki.python.org/moin/IntroductoryBooks
+- http://wiki.python.org/moin/BeginnersGuide/Examples
+- http://wiki.python.org/moin/BeginnersGuide/Programmers
+- http://python.org/about/getingstarted/
+- https://developers.google.com/products
+- https://developers.google.com/edu/python
+- https://t.co/6BOYcJoLh2
+- https://pythonistaplanet.com/python-programming-exercises-and-solutions/
+- https://www.linkedin.com/learning/programming-foundations-fundamentals-3/why-python?autoSkip=true&autoplay=true&resume=false
