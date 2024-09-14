@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# A script that displays:
+#+ 'bad luck' for the 4th iteration
+#+ 'good luck' for the eight iteration,
+#+ and 'Best School' for the other iterations.
+
+my_var="Best School"
+my_num=1
+
+while [ $my_num -le 10 ]
+do
+	if [ $my_num -eq 4 ]
+	then
+		echo "bad luck"
+	elif [ $my_num -eq 8 ]
+	then
+		echo "good luck"
+	else
+		echo "$my_var"
+	fi
+
+	my_num=$((my_num + 1))
+done

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This script tells a story based on the contents of the `/etc/passwd` file
+
+myfile="/etc/passwd"  # Stores the path to the /etc/passwd file, which contains information about system users.
+f1=""  # Initialozed empty strings
+f2=""  # Initialozed empty strings
+f3=""  # Initialozed empty strings
+
+while IFS= read -r line
+do
+	# Extract specific fields using the 'cut' command
+	f1="$(echo "$line" | cut -d":" -f1)"
+	f2="$(echo "$line" | cut -d":" -f4)"
+	f3="$(echo "$line" | cut -d":" -f6)"
+	f4="$(echo "$line" | cut -d":" -f7)"
+	f5="$(echo "$line" | cut -d":" -f3)"
+	f6="$(echo "$line" | cut -d":" -f2)"
+	f7="$(echo "$line" | cut -d":" -f5)"
+	
+	echo "The user ${f1} is part of the ${f2} gang, lives in ${f3} and rides ${f4}. ${f5}'s place is protected by the passcode ${f6}, more info about the user here: ${f7}"
+done < "$myfile"
+

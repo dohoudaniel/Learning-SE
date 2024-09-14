@@ -1,0 +1,26 @@
+- The writeFileSync() function is a synchronous method in JavaScript that is used to write data to a file. It is typically used in Node.js for file I/O operations. Unlike its asynchronous counterpart writeFile(), which uses callbacks or Promises, writeFileSync() blocks the execution of the code until the write operation is complete, making it synchronous. (Check this file to understand more: )
+
+- The syntax for writeFileSync() is as follows:
+
+	// js
+	// Copy code
+	fs.writeFileSync(file, data[, options])
+where:
+- file (required): A string or buffer that specifies the path or file descriptor where the data should be written.
+- data (required): The data that should be written to the file. This can be a string or a buffer.
+- options (optional): An object that specifies optional parameters, such as encoding, mode, and flag. This parameter is commonly used to specify the encoding for the data being written, such as 'utf8' for UTF-8 encoding.
+
+- Here's an example usage of writeFileSync() in Node.js to write a string to a file:
+
+	//javascript
+	// Copy code
+	const fs = require('fs');
+	
+	const fileName = 'example.txt';
+	const data = 'Hello, world!';
+	
+	fs.writeFileSync(fileName, data, 'utf8');
+
+	console.log(`Data has been written to ${fileName}`);
+
+- In this example, the writeFileSync() function is used to write the string 'Hello, world!' to a file named 'example.txt' in UTF-8 encoding. The console.log() statement afterward confirms that the data has been successfully written to the file. However, it's important to note that writeFileSync() is a synchronous method and will block the execution of code until the write operation is complete, which may not be desirable in certain situations with large amounts of data or slow I/O operations. Therefore, it's recommended to use the asynchronous writeFile() method in such cases.

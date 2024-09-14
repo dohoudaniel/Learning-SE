@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This bash script displays the PID of the most current running process
+
+command &  # Run your command in the background
+echo "PID of the most recent process: $!"

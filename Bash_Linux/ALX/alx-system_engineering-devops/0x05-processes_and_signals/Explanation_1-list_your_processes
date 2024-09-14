@@ -1,0 +1,17 @@
+Certainly! Here's an example of a Bash script that displays a list of currently running processes, meeting the specified requirements:
+
+```bash
+#!/bin/bash
+ps auxf
+```
+
+In this script, `ps auxf` is the command used to display the list of processes. Let's break down what each option does:
+
+- `a`: Shows all processes, including those of other users.
+- `u`: Provides a user-oriented output format that includes information like the user, CPU usage, memory usage, start time, and command line arguments.
+- `x`: Includes processes without controlling terminals.
+- `f`: Displays a process hierarchy by showing the relationship between parent and child processes.
+
+By running this script, you'll get a list of currently running processes, including those from all users, with a user-friendly output format and the process hierarchy displayed.
+
+Feel free to customize or modify the script further to suit your specific needs or preferences.

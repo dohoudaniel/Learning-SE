@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# A Bash Script that prints "Best School" ten times using an until loop
+
+my_var="Best School"
+my_int=0
+
+until [ $my_int -ge 10 ]
+do
+	echo "$my_var"
+	my_int=$((my_int + 1))
+done

@@ -1,0 +1,37 @@
+Prompt:
+	Please, extensively explain, as you would explain to a 6 year old, what this compilation command does:
+		- gcc -Wall -pedantic -Werror -Wextra -std=gnu89 -c *.c
+
+# Answer
+Sure, I'd be happy to explain!
+
+Imagine you have a big pile of toys, but they're all mixed up and you can't play with them until you put them together in the right way. 
+That's kind of like how a computer program works. A program is made up of lots of little pieces called "source code files". Each file has 
+instructions for the computer to follow, but they're not useful on their own. You need to put them together in a specific way to make them work.
+
+When you use a command like gcc -Wall -pedantic -Werror -Wextra -std=gnu89 -c *.c, you're telling the computer to take all the source code 
+files that end in .c (like myfile.c, yourfile.c, and so on) and turn them into something the computer can use. 
+This process is called "compiling".
+
+The gcc part of the command is the name of the program that does the compiling. Think of it like a machine that takes the toy pieces and puts 
+them together. The other parts of the command, like -Wall, -pedantic, and so on, are like instructions for the machine. They tell it to check 
+the source code files for mistakes and make sure they follow certain rules.
+
+For example, -Wall means "turn on all warnings". This is like telling the machine to be really careful and look for any mistakes you might have made. 
+
+-pedantic means "be really strict". This is like telling the machine to make sure you followed all the rules perfectly. 
+
+-Werror means "treat warnings as errors". This is like telling the machine to stop if it finds any mistakes, because they're so important that you can't ignore them. 
+
+-Wextra means "turn on even more warnings". This is like telling the machine to be even more careful and catch as many mistakes as possible.
+
+Finally, -std=gnu89 means "use a specific set of rules for the source code files". This is like telling the machine to make sure you're following a certain set 
+of instructions when you put the toy pieces together. In this case, the instructions are for a version of the C programming language called "gnu89".
+
+The -c part of the command is like telling the machine to only do part of the job. Instead of putting all the toy pieces together into one big toy, it only makes 
+smaller parts called "object files". These are like pieces of a puzzle that need to be put together later. Making object files first is a good way to save time 
+and make sure everything works before putting it all together.
+
+So, that's what the gcc -Wall -pedantic -Werror -Wextra -std=gnu89 -c *.c command does. It takes all the toy pieces (source code files) and turns them into 
+smaller puzzle pieces (object files) while checking for mistakes and following specific rules. Once all the pieces are made, you can put them together to make 
+a big toy (an executable program) that does something really cool!

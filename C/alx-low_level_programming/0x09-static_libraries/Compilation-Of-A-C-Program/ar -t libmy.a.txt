@@ -1,0 +1,12 @@
+What the command below do when used in a created C static library named libmy.a:
+
+ar -t libmy.a
+ChatGPT
+The command "ar -t libmy.a" is used to list the contents of a static library file named "libmy.a" that was created in the C programming language.
+
+Specifically, the "ar" command is a utility that is used to create, modify, and extract files from archives, which are collections of files combined 
+into a single file. The "-t" option tells the "ar" command to print a table of contents of the archive file, which lists the names of all the object 
+files that are contained within the archive.
+
+Therefore, the command "ar -t libmy.a" would print a list of all the object files that were included in the "libmy.a" static library file. This can be 
+useful for verifying the contents of the library or checking which functions are available in the library for linking with other programs.

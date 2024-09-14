@@ -1,0 +1,3 @@
+One important thing to take note of is that, in preprocessor-involved commands, like the ones in all .c files'
+	``` #include <stdio.h> ```
+ is always included as the header.

@@ -1,0 +1,37 @@
++-----------------------------------------------------------------------+
+| #!/usr/bin/env bash							|
+| # This script displays the contents of the file `/etc/passwd`.	|
+| #   Only displays the username, user id, and user home directory path.|
+|									|
+| myfile="/etc/passwd"							|
+| while IFS= read -r line						|
+| do									|
+|     echo "$line" | cut -d":" -f1,3,6					|
+| done < "$myfile"						       	|
++-----------------------------------------------------------------------+
+
+The given code reads the content of the file "/etc/passwd" line by line and extracts specific fields from each line using the `cut` command. Here's an explanation of how the code works:
+
+1. `myfile="/etc/passwd"`: Assigns the file path "/etc/passwd" to the variable `myfile`, which represents the file that will be read.
+
+2. `while IFS= read -r line`: Starts a `while` loop that reads each line from the file specified by the variable `myfile`. The `read` command is used to read input from a file.
+
+   - `IFS=`: Sets the Internal Field Separator to an empty value, ensuring that leading and trailing whitespace characters are preserved in the input.
+
+   - `-r`: Prevents interpretation of backslashes, ensuring that the line is read as is.
+
+   - `line`: Stores each line of the file in the variable `line` for further processing.
+
+3. `echo "$line" | cut -d":" -f1,3,6`: Takes the current line stored in the `line` variable and pipes it to the `cut` command.
+
+   - `echo "$line"`: Echoes the current line to the standard output.
+
+   - `cut -d":" -f1,3,6`: Uses the `cut` command to extract specific fields from the line.
+
+     - `-d":"`: Specifies the delimiter as a colon ":". This tells `cut` to split the line into fields using the colon as the separator.
+
+     - `-f1,3,6`: Specifies the fields to extract. In this case, it extracts the first field (username), the third field (user ID), and the sixth field (home directory path).
+
+4. `done < "$myfile"`: Indicates the end of the `while` loop and redirects the input for the loop from the file specified by the variable `myfile`.
+
+In summary, the code reads each line of the file "/etc/passwd" and extracts the username, user ID, and home directory path from each line using the `cut` command. It then echoes this information to the standard output.

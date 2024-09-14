@@ -1,0 +1,181 @@
+#!/usr/bin/env bash
+# A script for PID commands
+
+# Author: Daniel Dohou (https://github.com/dohoudaniel)
+# Title: A Simple Bash Script that helps the user understand how to access process identification numbers in Linux (PIDs)
+
+
+echo -e "\e[38;5;54mAuthor: Daniel Dohou (https://github.com/dohoudaniel)\e[0m"
+echo -e "\e[38;5;54mTitle: A Bash script that helps to understand PIDs in Linux.\n \e[0m"
+sleep 2
+
+
+echo -e "\e[38;5;208mCommands To Check Processes And PIDs in a Linux or Bash environment.\n \e[0m"
+sleep 1
+echo
+
+# 1. pidof init
+echo "1. Finding the PID of init using the 'pidof' command"
+sleep 1
+echo -e "\e[1;32m pidof init\n \e[0m"
+echo "Running command..."
+sleep 3
+pidof init # pidof init - This returns the PID of init
+
+
+echo
+
+
+# 2. The ps command
+echo "2. Using the ps command"
+sleep 1
+echo "ps: This basic command displays a subset of processes that are associated with the current terminal session."
+echo "The ps command in Bash is used to display information about running processes on a system."
+echo "It provides a snapshot of the currently running processes, including their process IDs (PIDs), resource utilization, and other details."
+echo -e "\e[1;32m ps\n \e[0m"
+sleep 1
+echo "Running command..."
+sleep 3
+ps
+
+
+echo
+
+
+# Variations / Options the ps command
+echo -e "\e[38;5;54mVariations / Options of the ps command\n \e[0m"
+echo "A. ps aux"
+echo "This option shows a detailed list of all running processes in a user-friendly format. It includes processes from all users (a) and provides an extensive listing of process details (u for user-oriented output and x to include processes without controlling terminals)."
+echo -e "\e[1;32m ps aux\n \e[0m"
+sleep 1
+echo "Running command..."
+sleep 3
+ps aux
+echo
+
+echo "B. ps -ef"
+echo "This option displays a process listing in a similar manner to 'ps aux', but the output format may vary slightly depending on the system."
+echo -e "\e[1;32m ps -ef\n \e[0m"
+sleep 1
+echo "Running command..."
+sleep 3
+ps -ef
+echo
+
+echo "C. ps -e"
+echo "This option displays information about all running processes on the system, regardless of the terminal session."
+echo -e "\e[1;32m ps -e\n \e[0m"
+sleep 1
+echo "Running command..."
+sleep 3
+ps -e
+echo
+
+echo "D. ps -l"
+echo "This option provides a long format output with additional details, including process state, process group ID (PGID), session ID (SID), parent process ID (PPID), and more."
+echo "This particular command will be very useful in the Simple Shell project."
+echo -e "\e[1;32m ps-l\n \e[0m"
+sleep 1
+echo "Running command..."
+sleep 3
+ps -l
+echo
+
+echo "E. ps -f"
+echo " This option displays a full-format listing of processes, including additional details such as the user, CPU and memory usage, start time, and command line arguments."
+echo -e "\e[1;32m ps -f\n \e[0m"
+sleep 1
+echo "Running command..."
+sleep 3
+ps -f
+echo
+echo "These are just a few examples of how you can use the ps command."
+echo -e "Run \e[1;32m man ps\e[0m for a\e[34m more\e0m[ comprehensive list of options and their descriptions."
+
+
+# 3. The pstree command
+echo "3. The pstree command"
+echo -e "\e[1;32m pstree\n \e[0m"
+sleep 1
+echo "Running command..."
+sleep 3
+pstree
+
+
+echo 
+
+
+# 4. The pidof top
+echo "4. Finding the PID of top"
+echo -e "\e[1;32m pidof top\n \e[0m"
+sleep 1
+echo "Running command..."
+sleep 3
+pidof top
+
+
+echo
+
+
+# 5. The kill command
+echo -e "5. The\e[38;5;54m kill\e[0m command"
+echo "To kill a running process, you need to pass it's PID to the kill command."
+echo "E.g: kill (PID)"
+sleep 2
+echo -e "\e[33m It is not advised to run the \e[0m \e[1;32mkill 1\e[0m \e[33m command. It automatically initiates the system shutdown sequence. This means that running kill 1 in WSL will attempt to shut down the entire WSL environment.\e[0m"
+echo -e "\e[34m Never run the\e[0m \e[1;32mkill 1\e[0m \e[34mcommand!\n \e[0m"
+
+
+# 6. Using the /proc filesystem
+echo "6. Using the /proc file system"
+# echo "Listing the contents of /proc with the ls command and piping/transfering it to the less command"
+# echo "Press Ctrl-C to stop this process"
+# echo -e "\e[1;32m ls /proc | less\n \e[0m"
+echo -e "\e[1;32m ls /proc\n \e[0m"
+sleep 1
+echo "Running command..."
+sleep 3
+# ls /proc | less
+ls /proc
+
+echo
+
+# Getting the details of a directory in /proc or a /proc subdirectory
+echo "6. Getting the details of a directory in /proc or a /proc subdirectory"
+echo "To get the details of a subdirectory or a file in /proc, you can use the 'cat' command."
+echo "Please note that each directory contains several standard files containing information about the process."
+echo "Example:"
+echo -e "\e[1;32m cat /proc/1/cmdline\n \e[0m"
+sleep 1
+echo "Running command..."
+echo "This prints the name of the command (along with any options and arguments) that the process was started with, for PID 1."
+sleep 3
+cat /proc/1/cmdline
+echo -e "# When this script was being created, \e[1;32m cat /proc/1/cmdline\e[0m showed nothing."
+echo ""
+
+echo
+
+# Finding extensive information about any PID.
+echo "7. Finding more extensive information can be found about any PID and the process it represents."
+echo "This can be done by reading the PID's status file, which is also found in its directory in /proc."
+echo "Example (the command being run now):"
+echo "Displaying the contents of the status file for PID 1"
+sleep 1
+echo -e "\e[1;32m cat /proc/1/status\n \e[0m"
+echo "Running command..."
+sleep 3
+cat /proc/1/status
+
+echo
+
+# . The top command
+echo -e "8. The \e[38;5;208mtop \e[0m command\n"
+echo "Press Ctrl-C to exit the top command"
+echo -e "\e[1;32m top\n \e[0m"
+sleep 1
+echo "Running command..."
+sleep 5
+top
+
+echo

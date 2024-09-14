@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# A Bash script that dispalays 1 to 20 and
+#+ displays 4 and then bad luck from China for the 4th loop iteration
+#+ displays 9 and then bad luck from Japan for the 9th loop iteration
+#+ displays 17 and then bad luck from Italy for the 17th loop iteration
+
+my_var=1
+my_num=0
+
+while [ $my_num -lt 20 ]
+do
+	case "$my_var" in
+	4)
+		echo "$my_var"
+		echo "bad luck from China"
+		;;
+	9)
+		echo "$my_var"
+		echo "bad luck from Japan"
+		;;
+	17)
+		echo "$my_var"
+		echo "bad luck from Italy"
+		;;
+	*)
+		echo "$my_var"
+		;;
+	
+	esac
+
+	my_var=$((my_var + 1))
+	my_num=$((my_num + 1))
+done

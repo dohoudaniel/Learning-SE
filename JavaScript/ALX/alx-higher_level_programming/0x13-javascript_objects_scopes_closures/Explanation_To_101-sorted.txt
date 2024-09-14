@@ -1,0 +1,23 @@
+// Explanation to 101-sorted.js
+
+The code provided consists of two JavaScript files: "101-data.js" and "101-sorted.js". Let's go through each file and understand what is happening.
+
+File: "101-data.js"
+This file defines an object called "dict" with key-value pairs. The keys represent user IDs (89, 90, 91, 92, 93, 94) and the values represent occurrences associated with each user ID (1, 2, 1, 3, 1, 2). This "dict" object is exported using the "exports" keyword, making it accessible to other modules.
+
+File: "101-sorted.js"
+This file begins by importing the "dict" object from the "101-data.js" module using the "require" function and destructuring assignment. The imported "dict" object represents the user IDs and their corresponding occurrences.
+
+Next, a new empty object called "userIdsByOccurrence" is created to store user IDs grouped by their occurrences.
+
+The code then iterates over the "dict" object using a "for...in" loop, where "userId" represents the keys (i.e., user IDs) in the "dict" object. For each iteration, the corresponding occurrence is retrieved from the "dict" object using "dict[userId]" and stored in a variable called "occurrence".
+
+An "if" statement checks if the "occurrence" is not a key in the "userIdsByOccurrence" object. If it is not, an empty array is created as the value for that key in the "userIdsByOccurrence" object using "userIdsByOccurrence[occurrence] = []".
+
+The "userId" is then pushed into the array for the corresponding occurrence in the "userIdsByOccurrence" object using "userIdsByOccurrence[occurrence].push(parseInt(userId))". Note that "parseInt" is used to convert the "userId" from a string to an integer before pushing it into the array.
+
+This process continues for each key-value pair in the "dict" object, grouping user IDs by their occurrences in the "userIdsByOccurrence" object.
+
+Finally, the "userIdsByOccurrence" object, which now contains user IDs grouped by their occurrences, is printed to the console using "console.log(userIdsByOccurrence)".
+
+In summary, the code reads a "dict" object from "101-data.js", iterates over it, and creates a new dictionary ("userIdsByOccurrence") that groups user IDs by their occurrences, and then prints the resulting dictionary to the console.

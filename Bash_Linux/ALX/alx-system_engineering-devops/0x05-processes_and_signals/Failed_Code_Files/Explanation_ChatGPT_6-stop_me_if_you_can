@@ -1,0 +1,32 @@
+Certainly! Let's go through the code step by step and provide a detailed explanation of each part:
+
+```bash
+#!/bin/bash
+
+# Find the PID of the process
+pid=$(pgrep -f "4-to_infinity_and_beyond")
+
+if [ -z "$pid" ]; then
+    echo "The process 4-to_infinity_and_beyond is not running."
+else
+    # Terminate the process
+    pkill -P "$pid"
+    echo "The process 4-to_infinity_and_beyond has been stopped."
+fi
+```
+
+1. `#!/bin/bash`: This line is called a shebang and specifies the interpreter to be used for executing the script, which is `bash` in this case.
+
+2. `pid=$(pgrep -f "4-to_infinity_and_beyond")`: This command searches for the process ID (PID) of the `4-to_infinity_and_beyond` process using the `pgrep` command. The `-f` option is used to match the process name as a whole.
+
+3. `if [ -z "$pid" ]; then`: This condition checks if the `pid` variable is empty, indicating that the `4-to_infinity_and_beyond` process is not running. The `-z` operator is used to test if a string is empty.
+
+4. If the `pid` variable is empty, the script displays a message indicating that the process is not running.
+
+5. If the `pid` variable is not empty, meaning the process is running, the script proceeds to the `else` block.
+
+6. `pkill -P "$pid"`: This command uses the `pkill` command to send a termination signal to the parent process of the `4-to_infinity_and_beyond` process. The `-P` option is used to specify the parent process ID to target. By terminating the parent process, the `4-to_infinity_and_beyond` process will also be terminated.
+
+7. The script then displays a message confirming that the process has been stopped.
+
+In summary, the script uses `pgrep` to find the PID of the `4-to_infinity_and_beyond` process, and then uses `pkill` to terminate the parent process, which effectively stops the target process. The script includes checks to handle cases where the process is not running and provides appropriate feedback to the user.

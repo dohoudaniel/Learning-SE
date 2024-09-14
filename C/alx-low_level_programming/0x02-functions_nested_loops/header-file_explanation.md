@@ -1,0 +1,2 @@
+- int _abs(int); ->  You could also define prototypes of functions like this without adding their variables
+- Don't forget, you declare your function prototypes in your header file and you include them in your c files

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# A script that displays Best School 10 times,
+#+ but for the 9th iteration, displays Best School and then Hi on a new line.
+
+my_var="Best School"
+my_num=1
+
+while [ $my_num -le 10 ]
+do
+	if [ $my_num -eq 9 ]
+	then
+		echo "$my_var"
+		echo "Hi"
+	else
+		echo "$my_var"
+	fi
+
+	my_num=$((my_num + 1))
+done

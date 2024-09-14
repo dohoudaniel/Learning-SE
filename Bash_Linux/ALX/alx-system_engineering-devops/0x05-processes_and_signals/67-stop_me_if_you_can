@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# A Bash script that stops 4-to_infinity_and_beyond process.
+# Requirements: ou cannot use kill or killall
+
+# We can accomplish this by using the process name with the pkill command
+pkill -f 7-highlander

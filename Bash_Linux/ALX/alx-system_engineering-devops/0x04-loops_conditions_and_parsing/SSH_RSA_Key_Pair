@@ -1,0 +1,24 @@
+## Confidential!!!!!!
+
+I generated my RSA Key pair using the command   ssh-keygen -t rsa
+
+This was the output:
+
++ passphrase: dohoudanielfavour
+
+Your identification has been saved in 0-RSA_public_key
+Your public key has been saved in 0-RSA_public_key.pub
+The key fingerprint is:
+SHA256:EtkqhI5GnUSJtkXelxTw/J/BhXzSNxWQ7eJIcJz8Z04 root@Dohou-Daniel-01
+The key's randomart image is:
++---[RSA 3072]----+
+|  ++...o. o ..+.o|
+| o++o +o...=o. ..|
+|..++..o=. o+.+.o |
+|.+ .  .o. ..+o.E.|
+|... . o S..oo *  |
+|.    . .  ..o. . |
+|           o     |
+|                 |
+|                 |
++----[SHA256]-----+

@@ -1,0 +1,9 @@
+# I shall add updating commands for files here
+#!/bin/bash
+sudo npm install semistandard --global
+npm install -g npm
+npm install standard --global
+sudo apt update
+apt list --upgradable
+sudo apt upgrade -y
+

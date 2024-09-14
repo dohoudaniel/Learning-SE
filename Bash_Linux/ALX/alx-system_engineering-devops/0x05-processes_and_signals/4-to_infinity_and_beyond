@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# A Bash script that displays "To infinity and beyond" indefinitely.
+
+my_word="To infinity and beyond"
+
+while [ -n "$my_word" ]
+do
+	echo "$my_word"
+	sleep 2
+done

@@ -1,0 +1,4 @@
+# This is a bash script that can be used to update and upgrade Ubuntu versions.
+#!/bin/bash
+sudo apt update
+sudo apt upgrade

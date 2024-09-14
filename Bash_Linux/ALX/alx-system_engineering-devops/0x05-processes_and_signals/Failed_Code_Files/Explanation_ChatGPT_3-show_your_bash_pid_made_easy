@@ -1,0 +1,71 @@
+Certainly! Let's go through the code step by step and explain what each part does:
+
+```bash
+#!/bin/bash
+
+for pid in /proc/*/; do
+    pid="${pid%/}"
+    process_name=$(cat "$pid/cmdline" 2>/dev/null | tr -d '\0' | awk -F "/" '{print $NF}')
+    
+    if [[ $process_name == *bash* ]]; then
+        echo "PID: ${pid##*/}   Process Name: $process_name"
+    fi
+done
+```
+
+1. `#!/bin/bash`: This is known as a shebang and specifies the interpreter to be used for running the script, which is `bash` in this case.
+
+2. `for pid in /proc/*/; do`: This starts a loop that iterates over the directories in the `/proc` directory. Each directory represents a running process and is denoted by the process's PID.
+
+3. `pid="${pid%/}"`: This removes the trailing slash `/` from the process directory path.
+
+4. `process_name=$(cat "$pid/cmdline" 2>/dev/null | tr -d '\0' | awk -F "/" '{print $NF}')`: This retrieves the process name from the `cmdline` file within the process directory. Here's what each part does:
+   - `cat "$pid/cmdline"` reads the contents of the `cmdline` file, which contains the command line arguments used to launch the process.
+   - `2>/dev/null` redirects any error messages to `/dev/null`, effectively suppressing them.
+   - `tr -d '\0'` removes any null bytes from the output, if present.
+   - `awk -F "/" '{print $NF}'` uses `awk` to split the command line by `/` and extract the last field, which represents the process name.
+
+5. `if [[ $process_name == *bash* ]]; then`: This condition checks if the process name contains the word "bash". The `[[ ... ]]` construct is used for conditional checks in Bash.
+
+6. `echo "PID: ${pid##*/}   Process Name: $process_name"`: If the process name contains "bash", this line prints the PID (obtained from the process directory path using `${pid##*/}`) and the process name.
+
+By iterating over the `/proc` directories and extracting the process names from the `cmdline` files, the script identifies processes whose names contain the word "bash" and displays their PID and process name.
+
+Keep in mind that this method relies on the availability and accessibility of the `/proc` filesystem, which may vary depending on your operating system and system configuration.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Certainly! Let's go through the code step by step and provide a detailed explanation of each part:
+
+```bash
+#!/bin/bash
+
+for pid in /proc/*/; do
+    pid="${pid%/}"
+    process_name=$(cat "$pid/cmdline" 2>/dev/null | tr -d '\0' | awk -F "/" '{print $NF}')
+    
+    if [[ $process_name == *bash* ]]; then
+        echo "PID: ${pid##*/}   Process Name: $process_name"
+    fi
+done
+```
+
+1. `#!/bin/bash`: This line is called a shebang and specifies the interpreter to be used for executing the script, which is `bash` in this case.
+
+2. `for pid in /proc/*/; do`: This starts a loop that iterates over the directories in the `/proc` directory. Each directory corresponds to a running process on the system, and the `*` wildcard matches any process directory.
+
+3. `pid="${pid%/}"`: This line removes the trailing slash `/` from the process directory path. It ensures that the `pid` variable contains only the PID itself, without the trailing slash.
+
+4. `process_name=$(cat "$pid/cmdline" 2>/dev/null | tr -d '\0' | awk -F "/" '{print $NF}')`: This line retrieves the process name from the `cmdline` file within the process directory. Let's break it down:
+   - `cat "$pid/cmdline"` reads the contents of the `cmdline` file, which contains the command line arguments used to launch the process.
+   - `2>/dev/null` redirects any error messages (e.g., if the `cmdline` file is not accessible) to `/dev/null`, effectively suppressing them.
+   - `tr -d '\0'` removes any null bytes from the output, if present. Null bytes can sometimes appear in the `cmdline` file.
+   - `awk -F "/" '{print $NF}'` uses `awk` to split the command line by the `/` delimiter and prints the last field, which represents the process name. This field extraction is done using `$NF`, where `$` denotes a field variable and `NF` represents the total number of fields.
+
+5. `if [[ $process_name == *bash* ]]; then`: This condition checks if the process name contains the word "bash". The `[[ ... ]]` construct is a conditional expression in Bash, and the `==` operator checks for string equality.
+
+6. `echo "PID: ${pid##*/}   Process Name: $process_name"`: If the process name contains the word "bash" (as determined by the previous condition), this line prints the PID and process name. `${pid##*/}` extracts the PID from the process directory path by removing all characters until the last `/` (including the `/` itself).
+
+By iterating over the directories in the `/proc` directory and extracting the process names from the `cmdline` files, the script identifies processes whose names contain the word "bash" and displays their corresponding PID and process name.
+
+Please note that this script utilizes the `/proc` filesystem, which provides information about running processes on Linux systems. The availability and accessibility of the `/proc` filesystem may vary depending on your operating system and system configuration.

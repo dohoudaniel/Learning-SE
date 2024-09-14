@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+# A Bash script that stops 4-to_infinity_and_beyond process.
+# Requirements: ou cannot use kill or killall
+
+# Finding the PID of the process
+myPid=$(pgrep -f "4-to_infinity_and_beyond")
+
+# Killing the process
+pkill -P "$myPid"

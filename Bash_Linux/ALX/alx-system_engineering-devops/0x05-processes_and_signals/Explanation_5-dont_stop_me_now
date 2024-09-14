@@ -1,0 +1,30 @@
+To stop a process using the `kill` command, you need to know the process ID (PID) of the process you want to terminate. Here's an example of a Bash script that stops the `4-to_infinity_and_beyond` process using the `kill` command:
+
+```bash
+#!/bin/bash
+
+# Find the PID of the process
+pid=$(pgrep -f "4-to_infinity_and_beyond")
+
+if [ -z "$pid" ]; then
+    echo "The process 4-to_infinity_and_beyond is not running."
+else
+    # Terminate the process
+    kill "$pid"
+    echo "The process 4-to_infinity_and_beyond (PID: $pid) has been stopped."
+fi
+```
+
+In this script:
+
+1. The `pgrep -f "4-to_infinity_and_beyond"` command searches for the process ID (PID) of the `4-to_infinity_and_beyond` process. The `-f` option matches the process name as a whole.
+
+2. The `pid` variable captures the output of the `pgrep` command, which is the PID of the process. If the `4-to_infinity_and_beyond` process is not running, the `pid` variable will be empty.
+
+3. The `if [ -z "$pid" ]; then` condition checks if the `pid` variable is empty, indicating that the process is not running. If so, it displays a message indicating that the process is not running.
+
+4. If the `pid` variable is not empty, the script proceeds to the `else` block, which means the process is running. It uses the `kill` command to send a termination signal to the process specified by the PID stored in the `pid` variable.
+
+5. Finally, it displays a message confirming that the process has been stopped, along with its PID.
+
+Note that in this script, the `pgrep` command is used to find the PID of the process based on its name. The `-f` option is used to ensure that the full process name is matched. If the `pgrep` command is not available in your system, you can use other methods to find the PID of the process, such as using `ps` and filtering the output.

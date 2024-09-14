@@ -1,0 +1,8 @@
+- A Pointer is a variable which contains a memory address.
+- The computer reserves memory for every variable declared. The memory reserved will then store the value of the variable.
+- The size of each type is generally defined in bytes (1 byte = 8 bits, each bit being 0 or 1). 
+- The sizes of the types also depend on the computer you are using.
+- Here are the sizes of the most common types on most 64-bit Linux machines:
+	- char -> 1 byte
+	- int -> 4 bytes
+	- float -> 4 bytes

@@ -1,0 +1,12 @@
+# This file updates, upgrades, and changes the user mode
+#!/bin/bash
+echo 'Updating....'
+sudo apt update
+echo 'Listing Upgradables...'
+apt list --upgradable
+echo 'Upgrading...'
+sudo apt upgrade -y
+echo 'Done updating and upgrading...'
+echo 'Moving on...'
+echo "Let's begin working..."
+sudo su -

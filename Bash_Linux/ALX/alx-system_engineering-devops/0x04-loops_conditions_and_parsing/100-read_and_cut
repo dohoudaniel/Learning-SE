@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# A Bash script that displays the content of the file /etc/passwd.
+# This script only displays username, user id, and the path to the
+#+ home directory for the user
+
+# Assigns the file path "/etc/passwd" to 'myScript'.
+# 'myScript' is to be read.
+myScript="/etc/passwd"
+
+# Read each line from file using a while loop specified by 'myScript'
+#+ and stores each line of myScript in 'myLine'
+while IFS= read -r myLine
+do
+	# Echoes the current line to the standard output.
+	echo "$myLine" | cut -d":" -f1,3,6
+
+# End of loop. Redirect the input for the loop from the file specified by 'myScript'
+done < "$myScript"

@@ -1,0 +1,13 @@
+What does nm libmy.a do then?
+
+ChatGPT
+The nm command is another utility used to inspect binary files such as object files, shared libraries, and archives (like the static library file libmy.a). 
+When nm is run on an archive file like libmy.a, it displays a list of symbols defined in the object files that are contained within the archive.
+
+Specifically, the nm command prints the symbol table of the archive file. The symbol table contains a list of all the symbols (e.g. functions, variables) 
+defined in the object files within the archive, along with their type and their address in memory (if available). The symbol table is usually used by the 
+linker to resolve symbols during program linking.
+
+So running the command nm libmy.a would display a list of symbols defined in the object files contained within the libmy.a archive file. This can be useful 
+for verifying that the functions or variables you expect to be included in the library are actually present, and for debugging issues related to symbol 
+resolution during program linking.

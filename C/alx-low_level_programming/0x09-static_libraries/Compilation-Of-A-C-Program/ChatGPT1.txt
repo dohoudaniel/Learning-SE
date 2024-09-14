@@ -1,0 +1,25 @@
+Prompt:
+	Please, extensively explain, as you would explain to a 6 year old, what this compilation command does:
+		- gcc -Wall -pedantic -Werror -Wextra -std=gnu89 -c *.c
+
+# Answer
+Sure, I'd be happy to explain!
+
+So, when you write a program in a language like C, the computer doesn't understand it directly. You need to convert it into a special set of instructions that the computer can understand and execute. This process is called "compiling."
+
+The program that does the compiling is called a "compiler," and one of the most commonly used compilers for C programs is called "gcc."
+
+The command you asked about, gcc -Wall -pedantic -Werror -Wextra -std=gnu89 -c *.c, is a way to tell the gcc compiler to compile one or more C source code files into object files.
+
+Let's break it down:
+
+- gcc: This is the name of the compiler program we're using.
+- -Wall: This option tells the compiler to enable all warning messages, which can help catch potential errors or mistakes in the code.
+- -pedantic: This option tells the compiler to strictly adhere to the C language standard, which can help ensure that the code is portable and will work correctly on different platforms.
+- -Werror: This option tells the compiler to treat all warnings as errors, which means that if the compiler encounters a warning message, it will stop the compilation process and report an error. This can help ensure that the code is free of potential issues.
+- -Wextra: This option tells the compiler to enable some additional warning messages that aren't enabled by -Wall. These warnings can help catch additional issues in the code.
+- -std=gnu89: This option tells the compiler to use the C language standard from 1989, which is sometimes needed for compatibility with older code.
+- -c: This option tells the compiler to generate object files from the source code, without linking them into an executable, as I explained earlier.
+- Finally, the *.c at the end of the command tells the compiler to compile all C source code files in the current directory that have a .c file extension.
+
+	So, in summary, this command tells the gcc compiler to compile one or more C source code files into object files, while enabling various warning messages and strict adherence to the C language standard.

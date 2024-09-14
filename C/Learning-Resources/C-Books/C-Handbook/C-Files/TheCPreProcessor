@@ -1,0 +1,2 @@
+- The preprocessor is a tool that helps us a lot when programming with C. It is part of the C Standard, just like the language, the compiler and the standard library.
+It parses our program and makes sure that the compiler gets all the things it needs before going on with the process. What does it do, in practice? For example, it looks up all the header files you include with the #include directive. It also looks at every constant you defined using #define and substitutes it with its actual value.

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This Bash script prints "Best School" ten times using a while loop
+
+my_var="Best School"
+loop_count=0
+
+while [ "$loop_count" -lt 10 ]
+do
+	echo "$my_var"
+	loop_count=$((loop_count + 1))
+done

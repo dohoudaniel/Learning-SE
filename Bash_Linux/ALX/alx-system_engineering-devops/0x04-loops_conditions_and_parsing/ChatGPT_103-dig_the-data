@@ -1,0 +1,43 @@
+Certainly! Here's a Bash script that groups visitors by IP and HTTP status code and displays the data in the specified format:
+
+```bash
+#!/usr/bin/env bash
+# This script groups visitors by IP and HTTP status code
+
+myfile="apache-access.log"
+awk '{ count[$1 " " $9]++ }
+     END { for (key in count) print count[key], key }' "$myfile" | sort -rn
+```
+
+Let's break down the script step by step:
+
+```bash
+#!/usr/bin/env bash
+# This script groups visitors by IP and HTTP status code
+```
+
+- The first line specifies the interpreter to be used, which is Bash in this case.
+- The second line provides a brief description of the script's purpose.
+
+```bash
+myfile="apache-access.log"
+```
+
+- The `myfile` variable is set to the name of the Apache log file that you want to process. Adjust it to match your log file name or provide the full path to the log file.
+
+```bash
+awk '{ count[$1 " " $9]++ }
+     END { for (key in count) print count[key], key }' "$myfile" | sort -rn
+```
+
+- `awk` is used to process the log file and perform the required grouping.
+- `{ count[$1 " " $9]++ }` is the main `awk` program. It creates an associative array called `count` with the combination of IP and HTTP status code as the key. It increments the count for each occurrence of the key.
+- `END { for (key in count) print count[key], key }` is executed after processing the entire log file. It loops through each key in the `count` array and prints the count, IP, and HTTP status code in the specified format.
+- `"$myfile"` is the variable that contains the log file name. It is passed as the input file argument to `awk`.
+- `| sort -rn` pipes the output of `awk` to the `sort` command, which sorts the lines in reverse numeric order based on the occurrence count. This ensures that the output is ordered from the greatest to the lowest number of occurrences.
+
+To use the script, make sure the log file is in the same directory as the script or provide the correct file path in the `myfile` variable. Save the script to a file (e.g., `group-visitors.sh`), make it executable (`chmod +x group-visitors.sh`), and execute it (`./group-visitors.sh`).
+
+The script will process the log file, group visitors by IP and HTTP status code, and display the results in the specified format, ordered from the greatest to the lowest number of occurrences.
+
+I hope this helps!
