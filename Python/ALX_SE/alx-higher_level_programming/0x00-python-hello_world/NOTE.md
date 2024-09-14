@@ -1,0 +1,1 @@
+- The command ```echo $?``` is used to check the exit code of a compiled file.

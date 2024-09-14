@@ -1,0 +1,9 @@
+This code defines a class named `MyInt` that inherits from the built-in `int` class in Python. The purpose of the `MyInt` class is to override the `==` (equality) and `!=` (inequality) operators, inverting their behavior compared to the standard `int` class.
+
+Here's what the code does:
+
+- The `MyInt` class overrides the `__eq__` method, which is called when the `==` operator is used to compare two objects. In the overridden `__eq__` method, the `self.real` attribute is compared with the `value` argument using the `!=` operator. The `self.real` attribute represents the actual integer value of the `MyInt` object. By returning the result of `self.real != value`, the behavior of `==` is inverted, meaning that `==` now returns `True` when the values are not equal and `False` when they are equal.
+
+- The `MyInt` class also overrides the `__ne__` method, which is called when the `!=` operator is used to compare two objects. In the overridden `__ne__` method, the `self.real` attribute is compared with the `value` argument using the `==` operator. By returning the result of `self.real == value`, the behavior of `!=` is inverted, meaning that `!=` now returns `True` when the values are equal and `False` when they are not equal.
+
+In summary, by overriding these methods, the `MyInt` class changes the behavior of the `==` and `!=` operators for `MyInt` objects, inverting their usual semantics. The `self.real` attribute refers to the actual integer value of the `MyInt` object, allowing for comparison with the `value` argument.

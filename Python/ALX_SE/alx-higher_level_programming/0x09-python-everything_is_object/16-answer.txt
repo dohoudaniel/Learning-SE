@@ -1,0 +1,11 @@
+>>> def increment(n):
+...     n += 1
+>>>
+>>> a = 1
+>>> increment(a)
+>>> print(a)
+1
+
+# This is so because our function does not return the incremented value of n.
+# The increment() function takes an argument n and attempts to increment it by 1. However, in Python, integers are immutable, which means that the += operator creates a new object instead of modifying the original object n. Then, we defined a variable a and assign it the value 1. We called the increment() function with a as an argument. Inside the function, the value of a is copied into the parameter n, and n is incremented. However, this operation does not modify the original object a outside the function. After calling the function, we prints the value of a, which remains unchanged and outputs 1. Next, we print the result of print(increment(a)). Since the increment() function does not explicitly return a value, it implicitly returns None. Therefore, print(increment(a)) outputs None.
+# In summary, when you pass an immutable object like an integer to a function in Python, modifications to the object inside the function do not affect the original object outside the function. If you want the modified value to be visible outside the function, you need to return it and assign it back to the variable.

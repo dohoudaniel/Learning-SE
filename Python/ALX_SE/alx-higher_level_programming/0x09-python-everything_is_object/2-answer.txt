@@ -1,0 +1,8 @@
+>>> a = 89
+>>> b = 100
+>>> a is b
+False
+>>> a == b
+False
+
+No

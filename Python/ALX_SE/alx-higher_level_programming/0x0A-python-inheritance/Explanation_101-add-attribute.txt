@@ -1,0 +1,11 @@
+The function add_attribute takes three arguments: obj, att, and value. obj represents the object to which the attribute will be added, att is the name of the attribute, and value is the value of the attribute.
+
+The function is properly documented using docstrings. The docstring provides a description of the function, along with information about the arguments and any raised exceptions.
+
+The hasattr function is used to check if the object obj has a __dict__ attribute. The __dict__ attribute is a dictionary that stores the object's attributes and their corresponding values. If obj has a __dict__ attribute, it means that new attributes can be added to it.
+
+If obj does not have a __dict__ attribute, a TypeError exception is raised with the message "can't add new attribute". This indicates that the object does not support adding new attributes.
+
+If obj has a __dict__ attribute, the setattr function is used to set the attribute on the object. The setattr function takes the object obj, the attribute name att, and the attribute value value. This effectively adds the new attribute to the object.
+
+In summary, the code checks if an object has a __dict__ attribute to determine if new attributes can be added. If it does not have a __dict__ attribute, a TypeError is raised. If it does have a __dict__ attribute, the attribute is added to the object using setattr.

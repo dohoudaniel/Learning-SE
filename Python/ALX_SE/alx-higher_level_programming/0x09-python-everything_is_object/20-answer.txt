@@ -1,0 +1,20 @@
+>>> a = ()
+>>>
+
+# Using isinstance()
+>>> if isinstance(a, tuple):
+...     print('a is a tuple')
+... else:
+...     print('a is not a tuple')
+...
+a is a tuple
+
+# Using type()
+>>> if type(a) is tuple:
+...     print('a is a tuple')
+... else:
+...     print('a is not a tuple')
+...
+a is a tuple
+
+Yes

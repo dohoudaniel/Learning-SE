@@ -1,0 +1,60 @@
+# ChatGPT
+Let's analyze each line of the script:
+
+a = 1024
+
+In this line, the integer value 1024 is assigned to the variable a. Since 1024 is outside the range of pre-allocated small integers (-5 to 256), Python will create a new int object to represent this value. Therefore, one int object is created during the execution of the first line.
+
+b = 1024
+
+Similar to the first line, the integer value 1024 is assigned to the variable b, which is also outside the range of pre-allocated small integers. Hence, another new int object is created. Therefore, one int object is created during the execution of the second line as well.
+
+del a
+
+After executing this line, the int object pointed by a (representing 1024) is deleted because the del statement removes the reference to the variable a.
+
+del b
+
+Similar to line 3, similarly, executing this line removes the reference to the variable b, causing the int object pointed by b (representing 1024) to be deleted.
+
+c = 1024
+
+In this line, a new int object is created to represent the value 1024 because it is a separate assignment and not a reuse of the previous int objects pointed by a or b. Therefore, executing this line creates one more int object.
+
+
+To summarize:
+The first line of the script creates 1 int object.
+The second line of the script creates 1 int object.
+After the execution of line 3, the int object pointed by a is deleted.
+After the execution of line 4, the int object pointed by b is deleted.
+The last line of the script creates 1 int object.
+
+-------------------------------------------------------------------------------------------------------
+
+Also, I created a Python function int():
+	def int():
+	    a = 1024
+	    b = 1024
+	    del a
+	    del b
+	    c = 1024
+
+I used the Python disassembler on it and this is what I got:
+>>> import dis
+>>> dis.dis(int)
+  2           0 LOAD_CONST               1 (1024)
+              2 STORE_FAST               0 (a)
+
+  3           4 LOAD_CONST               1 (1024)
+              6 STORE_FAST               1 (b)
+
+  4           8 DELETE_FAST              0 (a)
+
+  5          10 DELETE_FAST              1 (b)
+
+  6          12 LOAD_CONST               1 (1024)
+             14 STORE_FAST               2 (c)
+             16 LOAD_CONST               0 (None)
+             18 RETURN_VALUE
+
+This verifies what I got from ChatGPT.

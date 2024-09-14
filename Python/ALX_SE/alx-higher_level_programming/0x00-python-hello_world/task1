@@ -1,0 +1,4 @@
+#!/bin/bash
+python3 -c "$PYCODE"
+
+# '-c' is used to tell the interpreter to do something about commands, or to run a Python code.

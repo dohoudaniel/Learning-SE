@@ -1,0 +1,1 @@
+- The sys.argv[] function in Python gotten from importing sys works as the combination of the argc and argv functions in C. 

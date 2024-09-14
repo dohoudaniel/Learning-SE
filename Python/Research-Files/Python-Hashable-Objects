@@ -1,0 +1,51 @@
++ Research on Hashable Objects In Python Using ChatGPT
+
++ Prompt:
+- What are hashable objects in Pyhton? And how can I create and deal with hashable objects?
+
++ Response from GPT
+
+In Python, a hashable object is an object that has a hash value that remains constant throughout its lifetime. Hashable objects are used as keys in dictionaries or elements in sets because they allow for efficient storage and retrieval.
+
+To be hashable, an object must meet the following requirements:
+
+1. It must have a hash value that is immutable.
+2. It must implement the `__hash__()` method.
+3. It must implement the `__eq__()` method for equality comparisons.
+
+Here's an example of creating and dealing with hashable objects:
+
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __eq__(self, other):
+        if isinstance(other, Person):
+            return self.name == other.name and self.age == other.age
+        return False
+
+    def __hash__(self):
+        return hash((self.name, self.age))
+
+# Creating hashable objects
+person1 = Person("John", 25)
+person2 = Person("Jane", 30)
+
+# Using hashable objects as dictionary keys
+person_dict = {person1: "Employee", person2: "Manager"}
+
+# Retrieving values using hashable objects
+print(person_dict[person1])  # Output: Employee
+
+# Using hashable objects in a set
+person_set = {person1, person2}
+
+# Checking membership
+print(person1 in person_set)  # Output: True
+```
+
+In the example above, we define a `Person` class and implement the `__eq__()` method to compare two `Person` objects based on their `name` and `age`. We also implement the `__hash__()` method to generate a hash value using the `name` and `age` attributes. This allows us to use instances of the `Person` class as keys in a dictionary and as elements in a set.
+
+Note that immutable built-in types like integers, floats, strings, and tuples are hashable by default in Python. If you need to create custom hashable objects, you should implement the `__hash__()` method accordingly.

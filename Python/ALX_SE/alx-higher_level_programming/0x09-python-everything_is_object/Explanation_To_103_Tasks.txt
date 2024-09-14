@@ -1,0 +1,37 @@
+# The Python file used here was int.py
+# int.py
+a = 1
+b = 1
+
+I asked ChatGPT, and this was the answer I got.
+
+In the first line of the script, no int objects are created during execution.
+In Python, small integers within the range (-5 to 256) are pre-allocated and cached by the interpreter. When you assign a variable to a small integer within this range, Python does not need to create a new int object every time. Instead, it references the existing cached object representing that value.
+In the case of the first line (a = 1), the integer value 1 falls within the pre-allocated range. Therefore, Python simply references the existing int object representing 1, and no new int objects are created during the execution of that line.
+
+In the second line of the script (b = 1), the integer value 1 also falls within the pre-allocated range (-5 to 256) of small integers. Therefore, just like in the first line, Python will reuse the existing int object representing 1.
+Since the int object representing 1 is already created and cached from the execution of the first line, no new int objects are created during the execution of the second line. Python simply references the same existing int object for the variable b.
+
+To summarize:
+The first line of the script does not create any new int objects.
+The second line of the script also does not create any new int objects.
+In both cases, no int objects are created during the execution because the small integer value 1 is reused from the pre-allocated range.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+I also used the Python disassembler to confirm, and it was true. I created a function called int_create():
+		def int_create():
+		    a = 1
+		    b = 1
+Then I ran this into the Python interpreter:
+>>> import dis
+>>> dis.dis(int)
+  2           0 LOAD_CONST               1 (1)
+              2 STORE_FAST               0 (a)
+
+  3           4 LOAD_CONST               1 (1)
+              6 STORE_FAST               1 (b)
+              8 LOAD_CONST               0 (None)
+             10 RETURN_VALUE
+
+The LOAD_CONST variables show 0 for the two lines. This means that no instances for integers were created for a and b.

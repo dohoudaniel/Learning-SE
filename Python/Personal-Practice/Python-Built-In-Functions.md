@@ -1,0 +1,17 @@
+# Commonly Used Built-In Functions In Python:
+- print() function -> The print() function prints the specified message to the screen or another standard output device. The message that wants to print can be a string or any other object. This function converts the object into a string before written to the screen.
+- type() function -> The type() function returns the type of the specified object.
+- input( ) function -> The input() function allows taking the input from the user.
+- abs( ) function -> The abs() function returns the absolute value of the specified number.
+- pow( ) function -> The pow() function returns the calculated value of x to the power of y i.e, xy. If a third parameter is present in this function, then it returns x to the power of y, modulus z.
+- dir( ) function -> The dir() function returns all the properties and methods of the specified object, without the values. This function even returns built-in properties which are the default for all objects.
+- sorted( ) function -> The sorted() function returns a sorted list of the specified iterable object. You can specify the order to be either ascending or descending. In this function, Strings are sorted alphabetically, and numbers are sorted numerically. NOTE: If a list contains BOTH string values AND numeric values, then we cannot sort it.
+- max( ) function -> The max() function returns the item with the maximum value or the item with the maximum value in an iterable. If the values this function takes are strings, then it is done using an alphabetical comparison.
+- round( ) function -> The round() function returns a floating-point number that is a rounded version of the specified number, with the specified number of decimals. The default number of decimals is 0, meaning that the function will return the nearest integer.
+- divmod( ) function -> The divmod() function returns a tuple containing the quotient and the remainder when the first argument i.e, the dividend is divided by the second argument i.e, the divisor.
+- id( ) function -> The id() function returns a unique id for the specified object. Note that all the objects in Python have their own unique id. The id is assigned to the object when it is created. The id is the object’s memory address and will be different for each time you run the program. (except for some object that has a constant unique id, like integers from -5 to 256).
+- ord( ) function -> The ord() function returns the number representing the Unicode code of a specified character.
+- len( ) function -> The len() function returns the count of items present in a specified object. When the object is a string, then the len() function returns the number of characters present in that string.
+- sum( ) function -> he sum() function returns a number, the sum of all items in an iterable.
+- help( ) function -> The help() function is used to display the documentation of modules, functions, classes, keywords, etc. If we don’t give an argument to the help function, then the interactive help utility starts up on the console.
+- The splitlines() method splits a string into a list. The splitting is done at line breaks.

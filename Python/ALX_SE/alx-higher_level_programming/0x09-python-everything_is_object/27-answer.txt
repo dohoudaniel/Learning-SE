@@ -1,0 +1,8 @@
+>>> a = [1, 2, 3, 4]
+>>> id(a)
+# This instance of id(a) will be different from the next one.
+>>> a = a + [5]
+>>> id(a)
+# This instance of id(a) will be different from the first one.
+
+No.

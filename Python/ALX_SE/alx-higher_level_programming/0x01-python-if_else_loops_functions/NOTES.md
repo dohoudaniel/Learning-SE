@@ -1,0 +1,13 @@
+Notes:
+-----
+- {:d} - For intefers
+- {:.f} - For floats
+- (:c) - For characters
+- abs() - This function returns the absoulte value of the specified number.
+- hex() - This function converts the specified number into a hexadecimal value.
+- ord() - This function returns the Unicode code (ASCII Number) of a specified character.
+- chr() - This function takes integer argument and return the string representing a character at that code point. Since chr() function takes an integer argument and converts it to character, there is a valid range for the input. 
+- The chr() function works as the reverse of the ord() function; The chr() function returns the character that represents the specified unicode.
+- The end parameter in the print function is used to add any string. At the end of the output of the print statement in python. By default, the print function ends with a newline. Passing the whitespace to the end parameter (end=' ') indicates that the end character has to be identified by whitespace and not a newline.
+- The reverse() method reverses the sorting order of the elements.
+- The print() function in Python works like the combination of the putchar() and the printf() functions of C. 

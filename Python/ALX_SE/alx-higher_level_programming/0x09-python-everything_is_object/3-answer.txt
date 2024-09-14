@@ -1,0 +1,8 @@
+>>> a = 89
+>>> b = 89
+>>> a == b
+True
+>>> a is b
+True
+
+Yes

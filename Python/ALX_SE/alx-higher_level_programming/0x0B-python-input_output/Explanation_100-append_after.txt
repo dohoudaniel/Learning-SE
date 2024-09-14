@@ -1,0 +1,60 @@
+Certainly! Here's a function that inserts a line of text into a file after each line containing a specific string:
+
+```python
+def append_after(filename="", search_string="", new_string=""):
+    """Append a line of text after each line containing a specific string in a file.
+
+    Args:
+        filename (str): The name of the file.
+        search_string (str): The specific string to search for in each line.
+        new_string (str): The line of text to be inserted after each matching line.
+
+    Returns:
+        None
+    """
+
+    # Read the contents of the file
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+
+    # Create a new list to store the modified lines
+    modified_lines = []
+
+    # Iterate through each line in the file
+    for line in lines:
+        # Append the current line to the modified list
+        modified_lines.append(line)
+
+        # Check if the search string is found in the current line
+        if search_string in line:
+            # Append the new string after the line containing the search string
+            modified_lines.append(new_string)
+
+    # Write the modified lines back to the file
+    with open(filename, 'w') as file:
+        file.writelines(modified_lines)
+```
+
+Let's go through the code and explain how it works:
+
+1. The function `append_after` takes three parameters: `filename`, which is the name of the file to be modified, `search_string`, which is the specific string to search for in each line, and `new_string`, which is the line of text to be inserted after each matching line.
+
+2. The function opens the file using a `with` statement, which ensures that the file is properly closed after reading its contents.
+
+3. The contents of the file are read using the `readlines()` method, which returns a list of lines from the file.
+
+4. A new list called `modified_lines` is created to store the modified lines of the file.
+
+5. The function iterates through each line in the `lines` list.
+
+6. The current line is appended to the `modified_lines` list.
+
+7. The function checks if the `search_string` is found in the current line using the `in` operator.
+
+8. If the `search_string` is found, the `new_string` is appended to the `modified_lines` list after the matching line.
+
+9. After iterating through all the lines in the file, the function opens the file again in write mode (`'w'`) using a new `with` statement.
+
+10. The `writelines()` method is used to write the modified lines back to the file.
+
+By using this function, you can specify a file, a search string, and a new string to be inserted after each line containing the search string. The function reads the file, modifies the lines accordingly, and writes the modified lines back to the same file.

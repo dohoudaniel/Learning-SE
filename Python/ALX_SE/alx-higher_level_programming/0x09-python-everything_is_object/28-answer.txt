@@ -1,0 +1,15 @@
+>>> # >>> a = [1, 2, 3]
+>>> a
+[1, 2, 3]
+>>> id (a)
+139926795932424
+>>> a += [4]
+>>> id(a)
+139926795932424
+
+Yes
+
+# The value for the second 'id' call will be the same as the value for the first 'id' call.
+# This is because, in Python, the '+=' operator for lists can modify the original list in-place, and it could also create a new list object.
+# This depends various factors such as the Python implementation, the list's size, and memory optimization strategies.
+# Here, the command 'a += [4]' modifies the original list in-place without creating a new object, then the id(a) after the operation will be the same as the previous one, indicating that the original list was modified.

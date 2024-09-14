@@ -1,0 +1,102 @@
+Certainly! Here's a script that reads from stdin line by line and computes metrics based on the given input format:
+
+```python
+#!/usr/bin/python3
+import sys
+
+def compute_metrics():
+    """Reads stdin line by line and computes metrics."""
+
+    # Initialize variables
+    total_size = 0
+    status_codes = {}
+
+    try:
+        # Read lines from stdin
+        for line_number, line in enumerate(sys.stdin, 1):
+
+            # Parse the line and extract the file size and status code
+            _, _, _, _, status_code, file_size = line.split()
+
+            # Update the total file size
+            total_size += int(file_size)
+
+            # Update the count for the status code
+            if status_code in status_codes:
+                status_codes[status_code] += 1
+            else:
+                status_codes[status_code] = 1
+
+            # Print statistics every 10 lines
+            if line_number % 10 == 0:
+                print("Total file size:", total_size)
+                for code in sorted(status_codes.keys()):
+                    print(code + ":", status_codes[code])
+
+    except KeyboardInterrupt:
+        # Handle keyboard interruption (CTRL + C)
+        print("Total file size:", total_size)
+        for code in sorted(status_codes.keys()):
+            print(code + ":", status_codes[code])
+
+if __name__ == "__main__":
+    compute_metrics()
+```
+
+Here's how the script works:
+
+1. The script defines a function `compute_metrics()` that will read from stdin and compute the required metrics.
+
+2. Inside the function, the variables `total_size` and `status_codes` are initialized. `total_size` will store the sum of file sizes, and `status_codes` will store the count for each status code.
+
+3. The script enters a `try` block to handle reading lines from stdin.
+
+4. The script uses a `for` loop and `enumerate()` function to iterate over the lines from stdin. The line number is tracked using `line_number`.
+
+5. Each line is split into individual parts using `split()` and the values for status code and file size are extracted.
+
+6. The total file size is updated by adding the file size to `total_size`.
+
+7. The count for the status code is updated in the `status_codes` dictionary. If the status code already exists as a key, the count is incremented. Otherwise, a new key is added with an initial count of 1.
+
+8. Every 10 lines (when `line_number % 10 == 0`), the script prints the total file size and the count for each status code. The status codes are printed in ascending order by iterating over the sorted keys of the `status_codes` dictionary.
+
+9. If a keyboard interruption occurs (CTRL + C), the script exits the `try` block and enters the `except KeyboardInterrupt` block.
+
+10. Inside the `except` block, the script prints the final total file size and the count for each status code.
+
+11. Finally, the script checks if it is being run as the main module, and if so, calls the `compute_metrics()` function.
+
+You can run the script and provide input from the `101-generator.py` script or by manually entering input line by line. The script will compute and print the metrics every 10 lines and after a keyboard interruption, as specified in the requirements.
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Certainly! Let's go through the code step by step:
+
+1. The script starts by defining a function `compute_metrics()`. This function will handle the task of reading input from stdin and computing the required metrics.
+
+2. Inside the `compute_metrics()` function, two variables are initialized: `total_size` and `status_codes`. `total_size` will keep track of the sum of file sizes encountered, and `status_codes` will store the count for each status code encountered.
+
+3. The script enters a `try` block to handle reading lines from stdin. This allows it to gracefully handle a keyboard interruption (CTRL + C) later.
+
+4. The script uses a `for` loop and `enumerate()` function to iterate over the lines from stdin. The `enumerate()` function provides both the line itself and its corresponding line number. The line number is stored in the `line_number` variable.
+
+5. Each line is split into individual parts using the `split()` method. The resulting parts are assigned to different variables using the `_` placeholder for parts that are not needed for further processing. In this case, the IP address, date, and the "GET /projects/260 HTTP/1.1" string are ignored. Only the status code and file size are extracted.
+
+6. The `file_size` value is converted to an integer using `int()` because it is read as a string from stdin.
+
+7. The `total_size` variable is updated by adding the current `file_size` to it, accumulating the sum of file sizes encountered so far.
+
+8. The `status_codes` dictionary is updated to keep track of the count for each status code. If the status code is already a key in the dictionary, its count is incremented by 1. Otherwise, a new key is added to the dictionary with an initial count of 1.
+
+9. After processing every 10 lines (when `line_number % 10 == 0`), the script prints the current metrics. It displays the `total_size` and then iterates over the sorted keys of the `status_codes` dictionary to print each status code and its corresponding count. The use of `sorted()` ensures that the status codes are printed in ascending order.
+
+10. If a keyboard interruption occurs (CTRL + C), the script exits the `try` block and enters the `except KeyboardInterrupt` block.
+
+11. Inside the `except` block, the script prints the final metrics before exiting. It displays the `total_size` and then iterates over the sorted keys of the `status_codes` dictionary to print each status code and its count.
+
+12. Finally, the script checks if it is being run as the main module (not imported by another script) by checking `if __name__ == "__main__"`. If it is the main module, it calls the `compute_metrics()` function to start the process of reading input and computing metrics.
+
+Overall, the code reads input from stdin, extracts the necessary information (status code and file size) from each line, updates the metrics (total file size and count of status codes), and periodically prints the current metrics. It also handles a keyboard interruption gracefully by printing the final metrics before exiting.
