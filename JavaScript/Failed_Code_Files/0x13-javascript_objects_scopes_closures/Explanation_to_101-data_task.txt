@@ -1,0 +1,29 @@
+/* 101-sorted_2.js */
+
+Sure! Here's a detailed explanation of what happens in the code:
+
+The code defines an object named myJSDict in the 101-data.js file, which contains key-value pairs where
+the keys represent user IDs and the values represent the occurrences of those user IDs.
+
+In the 101-sorted_2.js file, the myJSDict object is imported from 101-data.js using destructuring assignment
+and stored in a variable named myJSDict.
+
+A new empty object userIdsByOccurrence is created to store user IDs by their occurrence.
+
+The code iterates through the myJSDict object using a for...in loop, where userId represents the keys (user IDs) in myJSDict.
+
+For each user ID in myJSDict, the corresponding occurrence is retrieved and stored in a variable named occurrences.
+
+The code then checks if the number of occurrences is already a key in the userIdsByOccurrence dictionary using the in operator.
+
+If the number of occurrences is already a key in userIdsByOccurrence, the user ID is pushed into the array of user IDs for
+that occurrence using the push() method. The parseInt() function is used to convert the userId from a string to an integer
+before pushing it into the array. The push() method adds the user ID to the end of the array.
+
+If the number of occurrences is not a key in userIdsByOccurrence, a new key is created in userIdsByOccurrence with the occurrence as
+the key, and an array containing the user ID as the value is assigned to that key.
+
+After looping through all the user IDs in myJSDict, userIdsByOccurrence would have been populated with user IDs grouped by their occurrences.
+
+Finally, the userIdsByOccurrence dictionary is printed to the console using console.log() to display the new dictionary of user IDs grouped
+by their occurrences.

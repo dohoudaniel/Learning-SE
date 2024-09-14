@@ -1,0 +1,71 @@
+Certainly! Let's dive into the details of the `Pop` function and explain it step by step:
+
+```c
+/* Pop an entry from the stack */
+int Pop(node *stack)
+{
+    int temp;
+    node *toBePopped;
+
+    // Check if the stack is not empty
+    if (stack->next != NULL)
+    {
+        // Store the data of the top node to be returned
+        temp = stack->next->data;
+
+        // Adjust pointers to remove the top node from the stack
+        toBePopped = stack->next;
+        stack->next = stack->next->next;
+
+        // Free the memory occupied by the removed node
+        free(toBePopped);
+
+        // Return the popped element
+        return temp;
+    }
+    else {
+        // If the stack is empty, return -1 as an error code
+        return -1;
+    }
+}
+```
+
+The `Pop` function is responsible for removing the top element from the stack and returning its value. Let's break down the function into steps:
+
+1. The function takes a pointer to a `node` structure, which represents the stack.
+
+2. It declares two variables: `temp` to store the value of the popped element and `toBePopped` to store the address of the top node.
+
+3. It checks if the stack is not empty by examining the `next` pointer of the stack. If the `next` pointer is `NULL`, it means the stack is empty, and an error code (in this case, -1) is returned to indicate the failure to pop an element.
+
+4. If the stack is not empty, the function proceeds to the next steps.
+
+5. It retrieves the value of the top element by accessing the `data` field of the node pointed to by `stack->next->data`.
+
+6. It adjusts the pointers to remove the top node from the stack. The `stack->next` pointer is reassigned to the second node in the stack, effectively skipping over the top node.
+
+7. The memory occupied by the removed node (`toBePopped`) is freed using `free()` to prevent memory leaks.
+
+8. Finally, the function returns the value of the popped element stored in the `temp` variable.
+
+In summary, the `Pop` function removes the top element from the stack, adjusts the necessary pointers, frees the memory occupied by the removed node, and returns the value of the popped element. If the stack is empty, it returns -1 as an error code.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Explanation of 
+	toBePopped = stack->next;
+	stack->next = stack->next->next;
+
+Certainly! Let's explain the line `toBePopped = stack->next; stack->next = stack->next->next;` in the `Pop` function:
+
+1. `toBePopped = stack->next;`: This line assigns the address of the top node in the stack to the `toBePopped` pointer. The `stack->next` points to the current top node in the stack, so `toBePopped` now holds the address of the top node.
+
+2. `stack->next = stack->next->next;`: This line adjusts the pointers to remove the top node from the stack. It assigns the `next` pointer of the stack (which initially points to the top node) to the `next` pointer of the second node in the stack. This effectively skips over the top node and makes the second node the new top of the stack.
+
+   Here's a step-by-step breakdown of what happens:
+   - `stack->next->next`: This accesses the `next` pointer of the current top node, which points to the second node in the stack.
+   - `stack->next = stack->next->next;`: This assigns the value of `stack->next->next` to `stack->next`, updating the `next` pointer of the stack to point to the second node.
+
+   After this line executes, the top node is effectively removed from the stack, and the stack is adjusted to have the second node as the new top.
+
+In summary, the two lines of code in question update the pointers to remove the top node from the stack and make the second node the new top. The `toBePopped` pointer holds the address of the removed node, allowing it to be freed later to avoid memory leaks.

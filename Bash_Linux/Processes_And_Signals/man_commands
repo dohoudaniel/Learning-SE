@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Man the following commands
+man ps
+man pgrep
+man pkill
+man kill
+man exit
+man trap

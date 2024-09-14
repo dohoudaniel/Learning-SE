@@ -1,0 +1,14 @@
+When you compile the C files using the command `gcc main.c stack.c -o Stack_With_Linked_Lists`, the compiler (`gcc`) will generate an executable file named `Stack_With_Linked_Lists`. This executable can be executed by running `./Stack_With_Linked_Lists` in the terminal.
+
+Once the program is executed, the following steps will occur:
+
+1. The `main()` function in `main.c` will be executed first as it is the entry point of the program.
+2. It will include the necessary header files (`stdio.h` and "stack.h") and declare the `myStack` variable as a pointer to a `node` structure.
+3. The `create_stack()` function will be called to create an empty stack, and the returned pointer will be assigned to `myStack`.
+4. Three elements (1, 2, and 3) will be pushed onto the stack using the `Push()` function.
+5. The while loop will iterate until the stack becomes empty, calling the `Pop()` function to remove the top element and printing each popped element using `printf()`.
+6. Once the stack becomes empty, the loop will terminate.
+7. The program will reach the end of the `main()` function and return 0, indicating successful execution.
+8. The program will exit, and you will see the output of the popped elements printed on the terminal.
+
+In summary, the program creates a stack, pushes elements onto it, pops elements from it, and prints the popped elements. The execution flow follows the logic implemented in the code, interacting with the stack operations defined in "stack.c" and "stack.h".

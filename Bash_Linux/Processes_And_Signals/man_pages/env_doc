@@ -1,0 +1,68 @@
+ENV(1)                                                                     User Commands                                                                     ENV(1)
+
+NAME
+       env - run a program in a modified environment
+
+SYNOPSIS
+       env [OPTION]... [-] [NAME=VALUE]... [COMMAND [ARG]...]
+
+DESCRIPTION
+       Set each NAME to VALUE in the environment and run COMMAND.
+
+       Mandatory arguments to long options are mandatory for short options too.
+
+       -i, --ignore-environment
+              start with an empty environment
+
+       -0, --null
+              end each output line with NUL, not newline
+
+       -u, --unset=NAME
+              remove variable from the environment
+
+       -C, --chdir=DIR
+              change working directory to DIR
+
+       -S, --split-string=S
+              process and split S into separate arguments; used to pass multiple arguments on shebang lines
+
+       -v, --debug
+              print verbose information for each processing step
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       A mere - implies -i.  If no COMMAND, print the resulting environment.
+
+OPTIONS
+   -S/--split-string usage in scripts
+       The -S option allows specifing multiple parameters in a script.  Running a script named 1.pl containing the following first line:
+
+              #!/usr/bin/env -S perl -w -T
+
+       Will execute perl -w -T 1.pl .
+
+       Without the '-S' parameter the script will likely fail with:
+
+              /usr/bin/env: 'perl -w -T': No such file or directory
+
+       See the full documentation for more details.
+
+AUTHOR
+       Written by Richard Mlynarik, David MacKenzie, and Assaf Gordon.
+
+REPORTING BUGS
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+       Report env translation bugs to <https://translationproject.org/team/>
+
+COPYRIGHT
+       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       Full documentation at: <https://www.gnu.org/software/coreutils/env>
+       or available locally via: info '(coreutils) env invocation'
+
+GNU coreutils 8.30                                                         September 2019                                                                    ENV(1)

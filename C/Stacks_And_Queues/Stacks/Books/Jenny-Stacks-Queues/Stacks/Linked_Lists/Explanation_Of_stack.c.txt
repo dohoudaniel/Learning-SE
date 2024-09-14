@@ -1,0 +1,90 @@
+Certainly! Let's go through the code in detail and explain what each part does:
+
+```c
+/* stack.c */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "stack.h"
+```
+
+This section includes the necessary header files: `<stdio.h>` for standard input/output functions, `<stdlib.h>` for memory allocation and other general-purpose functions, and "stack.h" which is a user-defined header file for the stack.
+
+```c
+/* Create an empty stack */
+node *create_stack()
+{
+        node* emptyStack;
+        emptyStack = (node*)malloc(sizeof(node));
+        emptyStack->next = NULL;
+        return emptyStack;
+}
+```
+
+This function `create_stack()` is responsible for creating an empty stack. It dynamically allocates memory for a `node` structure, sets its `next` pointer to `NULL`, and returns the pointer to the newly created stack.
+
+```c
+void Push(int inputData, node *stack)
+{
+        node *newnode = (node *)malloc(sizeof(node));
+        newnode->data = inputData;
+        newnode->next = stack->next;
+        stack->next = newnode;
+}
+```
+
+The `Push()` function adds a new element to the top of the stack. It takes an integer `inputData` as the value to be pushed and a pointer to the stack. It creates a new node, assigns the `inputData` to its `data` field, and adjusts the pointers to insert it at the top of the stack.
+
+```c
+/* Pop an entry from the stack */
+int Pop(node *stack)
+{
+        int temp;
+        node *toBePopped;
+        if (stack->next != NULL)
+        {
+                temp = stack->next->data;
+                toBePopped = stack->next;
+                stack->next = stack->next->next;
+                free(toBePopped);
+                return temp;
+        }
+        else {
+                return NULL; // Error code, you can define according to the demand
+        }
+}
+```
+
+The `Pop()` function removes and returns the top element from the stack. It checks if the stack is not empty (`stack->next != NULL`). If it's not empty, it assigns the value of the top node's `data` to `temp`, adjusts the pointers to remove the top node, frees the memory occupied by the removed node, and returns `temp`. If the stack is empty, it returns `NULL`, which can be considered as an error code.
+
+```c
+/* Return the top element in the stack */
+int top(node *stack)
+{
+        if (stack->next != NULL)
+        {
+                return stack->next->data;
+        }
+        else {
+                return NULL;
+        }
+}
+```
+
+The `top()` function returns the value of the top element in the stack without removing it. It checks if the stack is not empty (`stack->next != NULL`). If it's not empty, it returns the `data` field of the top node. If the stack is empty, it returns `NULL`.
+
+```c
+// Determine if the stack is empty
+int is_empty(node *stack)
+{
+        return (stack->next==NULL);
+}
+```
+
+The `is_empty()` function checks if the stack is empty. It returns 1 if the stack is empty (i.e., `stack->next` is `NULL`), and 0 otherwise.
+
+These functions together provide the basic operations to manipulate a stack in C. They handle stack creation, pushing elements onto the stack, popping elements from the stack, retrieving the top element, and checking if the stack is empty.
+
+Note: It seems that the code assumes the existence of a `node` structure or typedef, which is likely defined in the "stack
+
+.h" header file. The details of the `node` structure and any other necessary definitions or declarations would be present in "stack.h".

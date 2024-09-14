@@ -1,0 +1,26 @@
++------------------------------------------+
+|					   |
+|Displaying TKinter Using A Virtual Display|
+|					   |
++------------------------------------------+
+
+The error message you encountered indicates that there is an issue with the display configuration when using tkinter in a headless environment like WSL. Since WSL doesn't have a graphical interface by default, tkinter is unable to create a window.
+
+However, there is a workaround to enable tkinter to work in a headless environment by utilizing a virtual display. One popular option is to use the `xvfb` package to create a virtual X server.
+
+To resolve the issue and make tkinter work in WSL, you can follow these steps:
+
+1. Install `xvfb` by running the following command:
+   ```
+   sudo apt update
+   sudo apt install xvfb
+   ```
+
+2. Set up the virtual display by running the following command:
+   ```
+   xvfb-run -a python3 your_script.py
+   ```
+
+   Replace `your_script.py` with the name of your Python script that uses tkinter and turtle.
+
+This will create a virtual display and execute your script within that display, allowing tkinter to work even without a physical display.

@@ -1,0 +1,32 @@
+trap: trap [-lp] [[arg] signal_spec ...]
+    Trap signals and other events.
+    
+    Defines and activates handlers to be run when the shell receives signals
+    or other conditions.
+    
+    ARG is a command to be read and executed when the shell receives the
+    signal(s) SIGNAL_SPEC.  If ARG is absent (and a single SIGNAL_SPEC
+    is supplied) or `-', each specified signal is reset to its original
+    value.  If ARG is the null string each SIGNAL_SPEC is ignored by the
+    shell and by the commands it invokes.
+    
+    If a SIGNAL_SPEC is EXIT (0) ARG is executed on exit from the shell.  If
+    a SIGNAL_SPEC is DEBUG, ARG is executed before every simple command.  If
+    a SIGNAL_SPEC is RETURN, ARG is executed each time a shell function or a
+    script run by the . or source builtins finishes executing.  A SIGNAL_SPEC
+    of ERR means to execute ARG each time a command's failure would cause the
+    shell to exit when the -e option is enabled.
+    
+    If no arguments are supplied, trap prints the list of commands associated
+    with each signal.
+    
+    Options:
+      -l	print a list of signal names and their corresponding numbers
+      -p	display the trap commands associated with each SIGNAL_SPEC
+    
+    Each SIGNAL_SPEC is either a signal name in <signal.h> or a signal number.
+    Signal names are case insensitive and the SIG prefix is optional.  A
+    signal may be sent to the shell with "kill -signal $$".
+    
+    Exit Status:
+    Returns success unless a SIGSPEC is invalid or an invalid option is given.

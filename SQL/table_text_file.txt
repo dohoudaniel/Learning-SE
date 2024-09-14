@@ -1,0 +1,7 @@
+-- This is a text file that contains an insertion of a table's values into an SQL database.
+-- This file will be used to populate the database's table.
+-- MySQL expects dates in YYYY-MM-DD format.
+-- \N is used to represent a null value.
+Jock	Daniel	Shepherd	m	2023-08-06	\N
+-- The command used to load the text file into the pet table is
+-- LOAD DATA LOCAL INFILE './table_text_file.txt' INTO TABLE pet;

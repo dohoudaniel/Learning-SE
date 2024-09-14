@@ -1,0 +1,23 @@
++-----------------------------+
+| Explanation to unittest.txt |
++-----------------------------+
+
+The code you provided demonstrates the usage of the `unittest` module in Python to define and run test cases.
+
+Here's a breakdown of what the code does:
+
+1. The line `from __future__ import print_function` ensures that the code behaves as if it were running in a future version of Python where the `print()` function is used instead of the `print` statement.
+
+2. The `import unittest` statement imports the `unittest` module, which provides a framework for writing and running tests.
+
+3. The code defines a test case class named `TestFoo`, which inherits from `unittest.TestCase`. This class contains two methods:
+
+   a. The `test_foo()` method is a test method that asserts the condition `self.assertTrue(True)`, which will always pass since `True` is a truthy value.
+
+   b. The `fun_not_run()` method is not a test method because its name does not start with the prefix `test_`. It simply prints the message "no run".
+
+4. The `unittest.main()` function is called, which automatically discovers and runs the test cases defined within the code. In this case, it runs the `TestFoo` test case.
+
+5. The test results are displayed in the console. In this case, it shows that 1 test was run and it passed successfully.
+
+Overall, this code demonstrates a basic example of how to write and run tests using the `unittest` module in Python. Test cases are defined as methods within a test case class, and the `unittest.main()` function is used to execute the tests and display the results.

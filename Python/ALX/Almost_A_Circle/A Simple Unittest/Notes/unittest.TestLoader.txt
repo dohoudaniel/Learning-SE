@@ -1,0 +1,27 @@
+In the `unittest` module, `TestLoader` is a class that provides methods to load tests from various sources and create test suites. It is responsible for discovering and loading test cases, test modules, or individual tests.
+
+The `TestLoader` class provides several useful methods for loading tests, including:
+
+1. `loadTestsFromModule(module)`: Loads all the test cases from the specified module and returns them as a test suite.
+2. `loadTestsFromTestCase(testCaseClass)`: Loads all the test cases from the specified `testCaseClass` (a subclass of `unittest.TestCase`) and returns them as a test suite.
+3. `loadTestsFromName(name, module=None)`: Loads the test or tests specified by the fully qualified name `name` from the given `module` and returns them as a test suite. The name can refer to a test case class, a test method, or a nested test suite.
+4. `loadTestsFromNames(names, module=None)`: Loads multiple tests specified by a list of fully qualified names from the given `module` and returns them as a test suite.
+
+Here's an example usage of `TestLoader`:
+
+```python
+import unittest
+
+class MyTestCase(unittest.TestCase):
+    def test_something(self):
+        self.assertEqual(2 + 2, 4)
+
+if __name__ == '__main__':
+    loader = unittest.TestLoader()
+    suite = loader.loadTestsFromTestCase(MyTestCase)
+    unittest.TextTestRunner().run(suite)
+```
+
+In this example, the `TestLoader` instance `loader` is used to load all the test cases from the `MyTestCase` class. The `loadTestsFromTestCase()` method is called with `MyTestCase` as an argument, which returns a test suite containing the loaded test cases. The suite is then executed using `TextTestRunner()` to run the tests and display the results.
+
+By utilizing `TestLoader`, you can conveniently load tests from various sources and create test suites, allowing you to organize and execute your tests effectively using the `unittest` framework in Python.

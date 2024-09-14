@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+echo "man grep"
+sleep 3
+man grep
+echo
+echo "man egrep"
+sleep 2
+man egrep
+sleep 2
+echo
+echo "man fgrep"
+sleep 2
+man fgrep
+sleep 2
+echo
+echo "grep --help"
+sleep 2
+grep --help
+sleep 2
+echo
+echo "grep --version"
+grep --version
+sleep 3
+echo "man ascii"
+sleep 2
+man ascii

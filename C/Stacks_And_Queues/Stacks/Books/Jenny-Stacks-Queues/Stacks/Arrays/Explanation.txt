@@ -1,0 +1,88 @@
+This code implements a stack data structure using an array. Let's go through the code and explain each part:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct
+{
+    int *data; // data is an array of integers
+    int top;   // Position of the top element
+    int size;  // Maximum number of data in the stack
+} Stack;
+```
+
+- The code starts by including the necessary header files for input/output and memory allocation.
+- It defines a structure named `Stack`, which represents the stack data structure. It has three members:
+  - `data`: a pointer to an array of integers. It will hold the stack elements.
+  - `top`: an integer representing the position of the top element in the stack.
+  - `size`: an integer indicating the maximum number of elements the stack can hold.
+
+```c
+int createStack(Stack *aStack, int size)
+{
+    aStack->data = (int *)malloc(sizeof(int) * size);
+    if (aStack->data != NULL) // Malloc failed
+    {
+        return 0;
+    }
+    aStack->size = size;
+    aStack->top = -1;
+    return 1;
+}
+```
+
+- The `createStack` function is responsible for creating a stack. It takes a pointer to a `Stack` structure and the desired size of the stack as parameters.
+- Inside the function, it dynamically allocates memory for the stack array using `malloc`.
+- If the memory allocation fails, it returns 0 to indicate failure.
+- If the memory allocation is successful, it assigns the size and initializes the `top` to -1 (indicating an empty stack).
+- Finally, it returns 1 to indicate success.
+
+The next four functions, `makeEmpty`, `isEmpty`, `isFull`, and `top`, are relatively straightforward:
+
+- `makeEmpty` resets the `top` to -1, effectively emptying the stack.
+- `isEmpty` checks if the stack is empty by comparing the value of `top` with -1.
+- `isFull` checks if the stack is full by comparing the value of `top` with `size - 1`.
+- `top` returns the value of the element at the top of the stack.
+
+```c
+int pop(Stack *aStack)
+{
+    if (!isEmpty())
+    {
+        int aData = top(aStack);
+        aStack->top--;
+        return aData;
+    }
+    else {
+        return 0;
+    }
+}
+
+int push(Stack *aStack, int aData)
+{
+    if (!isFull())
+    {
+        aStack->top++;
+        aStack->data[aStack->top] = aData;
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+```
+
+- The `pop` function removes and returns the element at the top of the stack.
+- It first checks if the stack is not empty using the `isEmpty` function.
+- If the stack is not empty, it calls the `top` function to retrieve the value of the top element, assigns it to `aData`, and then decrements the `top` to remove the element from the stack. Finally, it returns `aData`.
+- If the stack is empty, it returns 0.
+
+- The `push` function adds an element to the top of the stack.
+- It first checks if the stack is not full using the `isFull` function.
+- If the stack is not full, it increments the `top`, assigns the input data to `aStack->data[aStack->top]`, and then returns 1 to indicate success.
+- If the stack is full, it returns 0
+
+.
+
+Overall, this code provides the basic functionality of a stack using an array. It allows you to create a stack, check if it's empty or full, push elements onto the stack, pop elements from the stack, and retrieve the top element without removing it.

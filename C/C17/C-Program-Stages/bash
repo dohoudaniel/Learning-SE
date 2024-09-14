@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+# A Bash script that executes compilation commands on a simple C file.
+# To read more about the compilation, visit https://www.calleluks.com/the-four-stages-of-compiling-a-c-program/
+
+# Introductory message
+echo "" ; sleep 2.5
+echo "This is a Bash script that shows the stages of compilation of a C program." ; sleep 2.5 ; echo ""
+echo "The C program being used is the main.c file in this directory." ; sleep 2.5
+echo "To learn more, visit https://www.calleluks.com/the-four-stages-of-compiling-a-c-program/ to learn more." ; sleep 1.750
+echo ""
+echo "Beginning Bash script..."
+sleep 3
+
+# Print the contents of the main.c file
+echo "Printing the mian.c file..."
+echo "" ; echo "" ; sleep 2
+cat main.c
+echo "" ; echo "Done!" ; sleep 2
+echo "" ; echo "Begin compilation....." ; echo ""
+
+# Preprocessing Stage
+echo "Preprocessing Stage"
+echo "Printing the result of the preprocessing stage"
+echo "The command being run is:"
+sleep 1
+echo "$ cc -E main.c"
+cc -E main.c
+echo ""
+sleep 3
+
+# Compilation stage
+echo "Compilation stage"
+echo "Saving the result of the compilation stage"
+echo "The command being run is:"
+sleep 1
+echo "$ cc -S main.c"
+cc -S main.c
+echo ""
+sleep 2
+echo "This creates a file main.s. You can cat the file to see it's content."
+sleep 2
+echo ""
+echo "Printing the contents of main.s"
+sleep 1
+echo "Printing"
+cat main.s
+echo ""
+echo "Done!"
+echo ""
+echo ""
+sleep 3
+
+# Assembly stage
+echo "Assembly stage"
+echo "Saving the result of the assembly stage"
+echo "The command being run is:"
+sleep 1
+echo "$ cc -c main.c"
+# cc -c main.c
+echo ""
+sleep 2
+echo "This creates a file main.o . This file contains the object code of the program., and can be in a binary format and can be inspected using `hexdump` or `od`."
+echo ""
+echo "The command being run is:"
+echo "hexdump main.o"
+hexdump main.o
+sleep 2
+echo ""
+echo "Running another command..."
+echo "od -c main.o"
+od -c main.o
+echo ""
+sleep 3
+
+# Linking stage
+echo "Linking stage."
+echo "" ; echo "The command being run is:"
+echo "cc -o main main.c"
+cc -o main main.c
+echo ""
+sleep 2
+echo "Done."

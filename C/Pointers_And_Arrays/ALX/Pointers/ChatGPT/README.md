@@ -1,0 +1,1 @@
+- ChatGPT helping me understand pointers.

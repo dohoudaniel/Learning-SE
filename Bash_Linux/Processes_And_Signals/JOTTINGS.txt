@@ -1,0 +1,62 @@
+The default maximum value of PIDs is 32,767.
+ps
+pstree
+top
+pidof   -- This command takes an argument
+kill
+la /proc/
+la /proc/ | less
+less
+more
+env
+ps-u
+ps-A
+kill
+kill [PID]
+kill -9 PID
+pgrep
+trap
+exit
+pkill
+./myscript.py &    # Process forking a script or a file
+echo $?
+echo $!
+$#
+fg
+jobs
+nohup
+
+start
+stop
+restart
+
+
+The default signal is 15, which is SIGTERM. Which means if you just use the kill command without any number, it sends the SIGTERM signal.
+
+When you run the top command:
+
+
+PID: Unique Process ID given to each process.
+User: Username of the process owner.
+PR: Priority given to a process while scheduling.
+NI: ‘nice’ value of a process.
+VIRT: Amount of virtual memory used by a process.
+RES: Amount of physical memory used by a process.
+SHR: Amount of memory shared with other processes.
+S: state of the process
+‘D’ = uninterruptible sleep
+‘R’ = running
+‘S’ = sleeping
+‘T’ = traced or stopped
+‘Z’ = zombie
+%CPU: Percentage of CPU used by the process.
+%MEM; Percentage of RAM used by the process.
+TIME+: Total CPU time consumed by the process.
+Command: Command used to activate the process.
+
+To start a process and give it a nice value other than the default one, use:
+
+$ nice -n [value] [process name]
+To change nice value of a process that is already running use:
+
+renice [value] -p 'PID'

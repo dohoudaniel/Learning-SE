@@ -1,0 +1,22 @@
++---------------------------------------------------+
+| Explanation to test_module.py and test_2.py       |
++---------------------------------------------------+
+
+The provided code demonstrates a Python test suite using the `unittest` module. It defines two test case classes, `TestFoo` and `TestBar`, and runs them together as a test suite using `TextTestRunner`.
+
+Let's break down the code and understand what it does:
+
+In the `test_module.py` module:
+- `TestFoo` class is defined as a subclass of `unittest.TestCase`. It contains a single test method, `test_foo()`, which asserts that `True` is `True`. Additionally, it defines `setUpClass`, `tearDownClass`, `setUp`, and `tearDown` methods, which are special methods in `unittest` for setting up and tearing down test fixtures.
+- `TestBar` class is defined as another subclass of `unittest.TestCase`. It contains a single test method, `test_bar()`, which also asserts that `True` is `True`. It also has `setUp` and `tearDown` methods.
+- The code inside the `setUpClass`, `tearDownClass`, `setUp`, and `tearDown` methods simply print messages to indicate when these methods are called.
+
+In the `test.py` module:
+- `setUpModule` and `tearDownModule` functions are defined outside of any test class. These functions are special module-level functions in `unittest` that are called before and after running all the test cases in the module.
+- The test cases from `TestFoo` and `TestBar` are loaded into separate test suites, `suite1` and `suite2`, respectively, using `TestLoader().loadTestsFromTestCase()`.
+- The test suites `suite1` and `suite2` are combined into a single test suite called `suite` using `TestSuite()`.
+- Finally, the `suite` is run using `TextTestRunner()` to execute the test cases and display the results in the console.
+
+When you run the `test.py` script, the output will include messages indicating the execution order of the setup and teardown methods, as well as the test results.
+
+The purpose of this code is to demonstrate how to define test case classes, set up fixtures, and run them as a test suite using the `unittest` module in Python. It also showcases the usage of module-level setup and teardown functions.

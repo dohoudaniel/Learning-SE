@@ -1,0 +1,6 @@
+Time_type *t1;
+t1 = (Time_type*)malloc(sizeof(Time_type));
+…
+t1->hh = 12;
+…
+free(t1); //de-allocate when we no longer need it.
